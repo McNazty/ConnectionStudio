@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Alert, View, TextInput, Button, StyleSheet, Modal, Text } from 'react-native';
-import { styles } from '../styles/styles';
+import { Alert, View, TextInput, Button, StyleSheet, Modal, Text,TouchableOpacity } from 'react-native';
+//import { styles } from '../styles/styles';
 import RadioForm,{RadioButton, RadioButtonInput,RadioButtonLabel} from 'react-native-simple-radio-button'
 
 var Sex = [
@@ -32,6 +32,11 @@ const Signup = props => {
             { cancelable: false },
         );
     }
+    const [titleValue, setTitleValue] = useState('');
+
+    const titleChangeHandler = text => {
+        setTitleValue(text);
+    };
 
     return (
         <View style={styles.form}>
@@ -55,6 +60,11 @@ const Signup = props => {
                     formHorizontal={true}></RadioForm>
                     
                 </View>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Home', { screenTitle: titleValue })} >
+                            <View style={styles.buttons2}>
+                                <Text style={styles.buttonText2}>Enter</Text>
+                            </View>
+                        </TouchableOpacity>
             </View>
         </View>
     )
@@ -65,5 +75,73 @@ Signup.navigationOptions = navData => {
         headerTitle: navData.navigation.getParam('screenTitle')
     };
 }
+const styles = StyleSheet.create({
+
+    form: {
+        padding: 80,
+        textAlign: 'center'
+    },
+    layout:{
+        
+        marginTop:20,
+        flexDirection:"column"
+    },
+    screen: {
+        padding: 40,
+        textAlign: 'center'
+    },
+    animationContainer: {
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+    },
+    buttons: {
+        padding: 12,
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15,
+        margin: 2,
+        marginBottom: 10,
+        borderColor: 'black',
+        borderWidth: 1
+    },
+    buttonText: {
+        color: 'black',
+        fontSize: 20,
+        
+    },
+    buttons2: {
+        padding: 12,
+        backgroundColor: 'red',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15,
+        margin: 2,
+        marginBottom: 10,
+        borderColor: 'white',
+        borderWidth: 1
+    },
+    buttonText2: {
+        color: 'white',
+        fontSize: 20,
+     
+    },
+    mainText: {
+        marginBottom: 20,
+        color: '#a9a9a9',
+   
+        textAlign: 'center',
+        fontSize: 35
+    },
+    slightlySmallerText: {
+        marginBottom: 10,
+        fontSize: 20,
+        textAlign: 'center',
+        color: '#a9a9a9',
+       
+    }
+})
 
 export default Signup;

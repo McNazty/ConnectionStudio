@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, View, TextInput, Button, StyleSheet, Modal, Text } from 'react-native';
+import { Alert, View, TextInput, Button, StyleSheet, Modal, Text,TouchableOpacity } from 'react-native';
 import { styles } from '../styles/styles';
 
 const Login = props => {

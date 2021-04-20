@@ -60,13 +60,7 @@ MainPage.navigationOptions = navData => {
     return {
         headerTitle: 'Home',
         headerRight: (
-            <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-                <Item 
-                    title="Screen 2" 
-                    iconName={Platform.OS === 'android' ? 'md-add' : 'ios-add'} 
-                    onPress={() => navData.navigation.navigate('JokeFour') }
-                />
-            </HeaderButtons>
+            <Text> </Text>
         )
     }
 }
