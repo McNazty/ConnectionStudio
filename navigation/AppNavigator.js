@@ -8,13 +8,16 @@ import Signup from '../components/signup';
 import Login from '../components/Login';
 import Home from '../components/Home';
 import MainPage from '../components/MainPage';
+import Likes from '../components/Likes';
 
 const AppNavigator = createStackNavigator(
     {
         MainPage: {screen: MainPage},
         Sign:{screen: Signup},
         Log: { screen: Login },
-        Home:{ screen:Home}
+        Home:{ screen:Home},
+        Likes: {screen:Likes}
+        
         
     }, 
     {

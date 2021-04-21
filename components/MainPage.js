@@ -9,23 +9,7 @@ import CustomHeaderButton from '../header/CustomHeaderButton';
 
 
 const MainPage = props => {
-  const [openJoke1, setIsJoke1] = useState(false);
-  const [openJoke2, setIsJoke2] = useState(false);
-  const [openJoke3, setIsJoke3] = useState(false);
-  const [openJoke4, setIsJoke4] = useState(false);
   
-  const cancelJoke1Handler = () => {
-    setIsJoke1(false);
-  }
-  const cancelJoke2Handler = () => {
-    setIsJoke2(false);
-  }
-  const cancelJoke3Handler = () => {
-    setIsJoke3(false);
-  }
-  const cancelJoke4Handler = () => {
-    setIsJoke4(false);
-  }
 
   const [titleValue, setTitleValue] = useState('');
 
